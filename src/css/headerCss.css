@@ -1,0 +1,147 @@
+html {
+    padding: 0 15%;
+    width: 70%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header_top {
+    padding-bottom: 20px;
+}
+
+.header_top .user {
+    font-size: 12px;
+    text-align: right;
+}
+
+.header_top .user div {
+    display: inline-block;
+    padding: 0px 12px;
+    border-left: 1.5px solid rgb(170, 170, 170);
+}
+
+.header_top .user div a {
+    font-weight: 550;
+}
+
+.header_top .user .user_join{
+    border-left: none;
+}
+
+.header_top .user .user_join a {
+    color: rgb(182, 0, 182);
+}
+
+.header_middle {
+    height: 80px;
+}
+
+.header_middle .logo {
+    padding: 10px;
+    padding-right: 170px;
+}
+
+.header_middle .logo a {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(182, 0, 182);
+}
+
+.header_middle div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header_middle .search {
+    border: 2px solid rgb(182, 0, 182);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    >input:focus{outline: none;}
+}
+
+.header_middle .search input {
+    width: 400px;
+    height: 20px;
+    padding: 10px;
+    border: none;
+}
+
+.header_middle .search img {
+    border: 1px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.header_middle .search input::placeholder {
+    color: gray;
+    font-weight: 600;
+}
+
+.header_middle .myitem_info {
+    float: right;
+    height: 100%;
+}
+
+.header_middle .myitem_info div {
+    padding-top: 9%;
+    vertical-align: middle;
+    padding-left: 20px;
+    > a img {
+        width:80%;
+    }
+}
+
+.header_bottom .main_menu {
+    height: 80px;
+}
+
+.header_bottom ul {
+    padding-left: 0;
+}
+
+.header_bottom ul .menu {
+    float: left;
+    height: 100%;
+    padding-right: 110px;
+    > a, img {
+        vertical-align:middle;
+        font-weight: 550;
+    }
+}
+
+.header_bottom ul .menu:first-child {
+    padding-right: 150px;
+}
+
+.header_bottom .category {
+    height: 0;
+    overflow: hidden;
+}
+
+.header_bottom .category li {
+    line-height: 40px;
+    background-color: white;
+    vertical-align: middle;
+}
+
+.header_bottom .menu:hover {
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+.header_bottom .menu:hover ul {
+    height: 200px;
+    transition-duration: 0.5s;
+}
+
+.header_bottom .menu:hover ul li img {
+    padding-left: 20px;
+}
