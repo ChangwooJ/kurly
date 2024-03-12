@@ -1,15 +1,6 @@
-html {
+header {
     padding: 0 15%;
     width: 70%;
-}
-
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
 }
 
 .header_top {

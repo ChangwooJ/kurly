@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div className="header_middle">
                 <div className="logo">
-                    <a href="/"><img src={img.kurly}/></a>
+                    <img src={img.kurly}/>
                 </div>
                 <div className="search">
                     <input type="text" placeholder="검색어를 입력해주세요" />
