@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../images/imgidx.js";
-import "../css/headerCss.css";
+import "../css/header.css";
 
 const Header = () => {
     return(
@@ -41,7 +41,7 @@ const Header = () => {
             <div className="header_bottom">
                 <div className="main_menu">
                     <ul>
-                        <li className="menu"><a href="/menu/category"><img src={img.category}/>카테고리</a>
+                        <li className="menu"><a href="/menu/category"><img src={img.category}/> 카테고리</a>
                             <ul className="category"> {/*나중에 템플릿화하기+db활용*/}
                                 <li><a href="/menu/category/vegetable"><img src={img.vege} width="25" height="25"/>  채소</a></li>
                                 <li><a href="/menu/category/fruit"><img src={img.fruit} width="25" height="25"/>  과일</a></li>

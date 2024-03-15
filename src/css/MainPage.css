@@ -1,0 +1,12 @@
+.main_page {
+    padding: 5% 15% 5% 15%;
+    width: 70%;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.main_page .desc {
+    color: gray;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}

@@ -2,9 +2,11 @@ import React from "react";
 
 const Main = ({ children }) => {
     return (
-    <main id="main" role="main">
-        {children}
-    </main>
+        <body>
+            <main id="main" role="main">
+                {children}
+            </main>
+        </body>
     );
 };
 

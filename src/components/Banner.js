@@ -1,6 +1,6 @@
 import React from "react";
 import BannerImg from "../images/BannerImg";
-import "../css/BannerCss.css";
+import "../css/Banner.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwipeCore,{Navigation,Pagination,Autoplay} from 'swiper';
 
@@ -36,3 +36,4 @@ const Banner = () => {
 export default Banner;
 //css: opacity, flex.
 //react: js파일 로드안됨.
+//z-index.

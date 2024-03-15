@@ -13,7 +13,7 @@ const BannerImg = [
     },
     {
         id: 4,
-        src: "https://product-image.kurly.com/cdn-cgi/image/width=1900,height=370,quality=85/banner/main/pc/img/0ee90d6c-a2a8-4939-b69f-7b62cb5d71bd.jpg"
+        src: "https://product-image.kurly.com/cdn-cgi/image/width=1900,height=370,quality=85/banner/main/pc/img/94d94cd6-e92f-40eb-ac0c-aad816147cdd.jpg"
     },
     {
         id: 5,

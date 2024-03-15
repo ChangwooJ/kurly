@@ -1,0 +1,67 @@
+.slide_wrap {
+    position: relative;
+}
+
+.swiper_bt {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    border-radius: 100%;
+    background-color: white;
+    border: 0.5px solid rgb(241, 241, 241);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.swiper-prev {
+    position: absolute;
+    z-index: 2;
+    left: -20px;
+    top: 33%;
+}
+
+.swiper-next {
+    position: absolute;
+    z-index: 2;
+    right: -20px;
+    top: 33%;
+}
+
+.slide_item img {
+    width: 100%;
+}
+
+.slide_additem img {
+    padding-right: 3px;
+}
+
+.slide_additem {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border: 0.5px solid rgb(193, 193, 193);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide_item_info {
+    .item_title { font-weight: 500; padding: 10px 0; text-align: left;}
+    .item_price { 
+        color: gray; font-size: 14px; 
+        text-decoration: line-through; 
+        text-align: left;
+    }
+    .item_discount { 
+        text-align: left; color: orangered; 
+        float: left;
+    }
+    .item_disc_price {
+        float: left;
+        padding-left: 10px;
+        font-weight: 550;
+    }
+}
