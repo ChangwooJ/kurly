@@ -11,6 +11,7 @@ import drink from "./icon/drink.png";
 import meal from "./icon/meal.png";
 import week from "./icon/week.png";
 import addCart from "./icon/addCart.png";
+import dips_detail from "./icon/dips_detail.png";
 
 const img = {
     kurly,
@@ -25,7 +26,8 @@ const img = {
     drink,
     meal,
     week,
-    addCart
+    addCart,
+    dips_detail
 }
 
 export default img;

@@ -1,20 +1,13 @@
 nav {
-    padding-top: 40px;
     width: 100%;
 }
 
 nav .slide{
     width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
     z-index: 1;
 }
 
 nav .slide .slides {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: left 0.15s;
     left: 0px;
     flex-shrink: 0;

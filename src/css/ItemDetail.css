@@ -1,0 +1,109 @@
+article {
+    padding: 2% 15% 0 15%;
+}
+
+.info_wrap {
+    display: flex;
+}
+
+.info_wrap .info_img {
+    width: 40%;
+    padding-right: 5%;
+}
+
+.info_wrap .info_img img{
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.info_wrap .info_text_wrap {
+    width: 55%;
+    height: 1000px;
+    padding: 20px 0;
+}
+
+.info_text_wrap .main_info {
+    .title { font-size: 23px; font-weight: 550; padding-bottom: 30px;}
+    .disc { 
+        font-size: 25px; font-weight: 550; 
+        color: orangered; display: inline-block;
+    }
+    .disc_price {
+        display: inline-block; padding-left: 10px;
+        font-size: 23px; font-weight: 550;
+    }
+    .price { color: gray; text-decoration: line-through; }
+    padding-bottom: 40px;
+}
+
+.info_text_wrap .sub_info {
+    color: rgb(11, 11, 11);
+    font-size: 14px;
+    padding-bottom: 60px;
+
+    dl {
+        border-top: 1px solid rgb(238, 238, 238);
+        padding: 20px 0;
+        display: flex;
+        dt { width: 25%; }
+        dd h5 { font-weight: 500; color: rgb(59, 59, 59); }
+    }
+
+    .item_select dd {
+        width: 100%;
+        font-size: 12px;
+        border: 1px solid rgb(238, 238, 238);
+        padding: 10px;
+        input { 
+            border: none; background-color: transparent; 
+            font-size: 18px;
+        }
+        .quan_bt { 
+            font-weight: 550;
+            text-align: center;
+            margin-top: 20px;
+            padding: 5px 10px;
+            border: 1px solid rgb(238, 238, 238);
+            font-size: 15px;
+            width: 20%;
+        }
+        input[value="+"] {float: right;}
+        input[value="–"] {float: left;}
+        p { float: right; }
+        .sel_discP{ padding-left: 5px; font-weight: 550;}
+        .sel_price{ color: gray; text-decoration: line-through; }
+    }
+}
+
+.info_text_wrap .price_info {
+    padding-bottom: 60px;
+    font-size: 14px;
+    text-align: right;
+    h2 { 
+        font-size: 30px;
+        display: inline-block;
+        padding-left: 5px;
+    }
+    h3 { display: inline-block; font-size: 19px; padding-left: 5px;}
+}
+
+.info_text_wrap .add_Bt button {
+    border: 1px solid rgb(216, 216, 216); 
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: 550;
+    color: rgb(111, 0, 128);
+    width: 10%;
+    height: 60px;
+    border-radius: 4px;
+}
+
+.info_text_wrap .add_Bt .add_cart {
+    margin-left: 5%;
+    width: 85%;
+    display: inline-block;
+    height: 60px;
+    background-color: rgb(111, 0, 128);
+    color: white;
+}

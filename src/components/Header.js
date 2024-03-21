@@ -8,10 +8,10 @@ const Header = () => {
             <div className="header_top">
                 <div className="user">
                     <div className="user_join">
-                        <a href="/user/join">회원가입</a>
+                        <a href="/join">회원가입</a>
                     </div>
                     <div className="user_login">
-                        <a href="/user/login">로그인</a>
+                        <a href="/login">로그인</a>
                     </div>
                     <div className="costomer_service">
                         <a href="/user/service">고객센터</a>
@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div className="header_middle">
                 <div className="logo">
-                    <img src={img.kurly}/>
+                        <a href="/"><img src={img.kurly}/></a>
                 </div>
                 <div className="search">
                     <input type="text" placeholder="검색어를 입력해주세요" />

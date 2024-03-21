@@ -8,7 +8,6 @@ import MainPage from "../components/MainPage";
 const Home = () => {
     return(
         <>
-            <Header/>
             <Banner/>
             <Main>
                 <MainPage></MainPage>
