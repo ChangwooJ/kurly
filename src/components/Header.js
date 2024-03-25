@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< HEAD:src/components/Header.js
 import { img } from "../images/imgidx";
 import "../css/header.css";
+=======
+import img from "../images/imgidx.js";
+import "../css/headerCss.css";
+>>>>>>> e520ea8 (헤더 css파일로 변경):src/components/Header.jsx
 
 const Header = () => {
     return(
