@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import WeekItem from "../images/WeekItem";
-import img from "../images/imgidx";
+import { img } from "../images/imgidx";
 import "../css/ItemSlide.css";
 import 'swiper/css';
 

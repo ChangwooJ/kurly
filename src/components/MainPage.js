@@ -1,7 +1,7 @@
 import React from "react";
 import ItemSlide from "./ItemSlide";
 import "../css/MainPage.css"
-import img from "../images/imgidx";
+import { img } from "../images/imgidx";
 
 const MainPage = () => {
     let props = 'WeekItem';

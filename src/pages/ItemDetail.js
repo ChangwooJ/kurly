@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WeekItem from "../images/WeekItem";
 import { useParams } from "react-router-dom";
+import Review from "./Review";
 
 import '../css/ItemDetail.css';
 
@@ -58,6 +59,7 @@ const ItemDetail = () => {
                     </div>
                 </div>
             </div>
+            <Review item={item}></Review>
         </article>
     )
 }
