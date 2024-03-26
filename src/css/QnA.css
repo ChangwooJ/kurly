@@ -1,0 +1,37 @@
+.qna_head_wrap table {
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.qna_head_wrap th {
+    font-size: 15px;
+}
+
+
+.title {
+    width: 55%;
+}
+
+.writer {
+    width: 15%;
+}
+
+.date {
+    width: 15%;
+}
+
+.checked {
+    width: 15%;
+}
+
+.qna_list table {
+    width: 100%;
+    td {text-align: center;}
+    .title {
+        margin-left: 10px;
+        text-align: left;
+    }
+}
+

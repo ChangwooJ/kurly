@@ -1,5 +1,7 @@
 article {
-    padding: 2% 15% 0 15%;
+    margin: 2% 15% 0 15%;
+    width: 70%;
+    border: 1px solid red;
 }
 
 .info_wrap {
@@ -18,20 +20,20 @@ article {
 }
 
 .info_wrap .info_text_wrap {
-    width: 55%;
+    width: 54%;
     height: 1000px;
     padding: 20px 0;
 }
 
 .info_text_wrap .main_info {
-    .title { font-size: 23px; font-weight: 550; padding-bottom: 30px;}
+    .title { font-size: 23px; font-weight: 600; padding-bottom: 30px;}
     .disc { 
-        font-size: 25px; font-weight: 550; 
+        font-size: 25px; font-weight: 600; 
         color: orangered; display: inline-block;
     }
     .disc_price {
         display: inline-block; padding-left: 10px;
-        font-size: 23px; font-weight: 550;
+        font-size: 23px; font-weight: 600;
     }
     .price { color: gray; text-decoration: line-through; }
     padding-bottom: 40px;
@@ -71,7 +73,7 @@ article {
         input[value="+"] {float: right;}
         input[value="–"] {float: left;}
         p { float: right; }
-        .sel_discP{ padding-left: 5px; font-weight: 550;}
+        .sel_discP{ padding-left: 5px; font-weight: 600;}
         .sel_price{ color: gray; text-decoration: line-through; }
     }
 }
@@ -92,7 +94,7 @@ article {
     border: 1px solid rgb(216, 216, 216); 
     background-color: transparent;
     font-size: 25px;
-    font-weight: 550;
+    font-weight: 600;
     color: rgb(111, 0, 128);
     width: 10%;
     height: 60px;
@@ -106,4 +108,37 @@ article {
     height: 60px;
     background-color: rgb(111, 0, 128);
     color: white;
+}
+
+.qna_wrap {
+    padding-top: 60px;
+}
+
+.qna_button{
+    float: right;
+}
+
+.qna_title {
+    font-size: 23px;
+    padding-bottom: 10px;
+}
+
+.qna_button button {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(111, 0, 128);
+    border: none;
+    color: white;
+}
+
+.qna_title_wrap ul li {
+    font-size: 14px;
+    color: rgb(136, 136, 136);
+    list-style-type: disc;
+    list-style-position: inside;
+    ::marker{ color: rgb(136, 136, 136); }
+}
+
+.qna_title_wrap {
+    padding-bottom: 40px;
 }

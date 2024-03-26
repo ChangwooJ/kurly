@@ -1,11 +1,11 @@
 .review_photo button img {
-    width: 160px; 
-    height: 160px; 
+    width: 120px; 
+    height: 120px; 
     object-fit: cover;
 }
 
 .review_wrap h2 {
-    font-size: 28px;
+    font-size: 23px;
 }
 
 .review_wrap .review_photo {
@@ -18,40 +18,34 @@
     border: none;
 }
 
-.review_wrap .review_photo img:nth-child(1) {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding-left: 0;
-}
-
 .review_wrap .review_top {
     display: flex;
 }
 
 .review_wrap .review_count {
-    font-size: 18px;
-    font-weight: 550;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .review_wrap .review_sort{
-    width: 13%;
+    width: 20%;
     margin-left: auto;
     display: flex;
     justify-content: end;
     button {
         border: none;
         background-color: transparent;
-        font-size: 16px;
-        font-weight: 550;
+        font-size: 13px;
+        font-weight: 600;
     }
     padding-bottom: 60px;
 }
 
 .review_wrap .review_sort .separator {
     width: 1px;
-    height: 12px;
+    height: 13px;
     background-color: gray;
-    margin: 8px 10px 0 10px;
+    margin: 3px 10px 0 10px;
 }
 
 .review_wrap .review_main_item {
@@ -60,24 +54,24 @@
     padding: 30px 0;
     display: flex;
     .writer_info{
-        width: 25%;
+        width: 20%;
         margin-left: 30px;
-        font-size: 18px;
-        font-weight: 550;
+        font-size: 15px;
+        font-weight: 600;
     }
     article{
         padding: 0;
-        width: 75%;
+        width: 80%;
     }
 }
 
 .review_wrap article {
     .item{ 
         color: rgb(163, 163, 163); padding-bottom: 15px;
-        font-size: 15px;
+        font-size: 12px;
     }
     p{
-        font-size: 17px; font-weight: 550;
+        font-size: 14px; font-weight: 600;
         padding-bottom: 15px;
     }
     .photo button{
@@ -86,13 +80,13 @@
         border: none;
     }
     .photo button img {
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
         object-fit: cover;
         border-radius: 10px;
     }
     .date {
         color: rgb(163, 163, 163); padding-top: 15px;
-        font-size: 14px;
+        font-size: 10px;
     }
 }

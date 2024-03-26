@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeekItem from "../images/WeekItem";
 import { useParams } from "react-router-dom";
 import Review from "./Review";
+import QnA from "./QnA";
 
 import '../css/ItemDetail.css';
 
@@ -60,6 +61,7 @@ const ItemDetail = () => {
                 </div>
             </div>
             <Review item={item}></Review>
+            <QnaTitle></QnaTitle>
         </article>
     )
 }
@@ -82,4 +84,24 @@ function Quantity(props) {
     )
 }
 
+function QnaTitle(props) {
+    return(
+        <div className="qna_wrap">
+            <div className="qna_button">
+                <button>문의하기</button>
+            </div>
+            <div className="qna_title_wrap">
+                <h2 className="qna_title">상품 문의</h2>
+                <ul>
+                    <li>상품에 대한 문의를 남기는 공간입니다.
+                        해당 게시판의 성격과 다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
+                    <li>배송관련, 주문(취소,교환,환불)관련 문의 및 요청사항은 마이컬리 내 1:1문의에 남겨주세요.</li>
+                </ul>
+            </div>
+            <QnA></QnA>
+        </div>
+    )
+}
+
 export default ItemDetail;
+//개수 조절할때 총 가격 변동 구현 필요

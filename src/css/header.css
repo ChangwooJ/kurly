@@ -11,6 +11,7 @@ header {
 .header_top .user {
     padding-top: 7px;
     font-size: 12px;
+    font-weight: 600;
     text-align: right;
 }
 
@@ -18,10 +19,6 @@ header {
     display: inline-block;
     padding: 0px 12px;
     border-left: 1.5px solid rgb(170, 170, 170);
-}
-
-.header_top .user div a {
-    font-weight: 550;
 }
 
 .header_top .user .user_join{
@@ -42,12 +39,6 @@ header {
     padding-right: 170px;
 }
 
-.header_middle .logo a {
-    font-size: 25px;
-    font-weight: 600;
-    color: rgb(182, 0, 182);
-}
-
 .header_middle div {
     display: inline-block;
     vertical-align: middle;
@@ -62,7 +53,7 @@ header {
 
 .header_middle .search input {
     width: 400px;
-    height: 20px;
+    height: 30px;
     padding: 10px;
     border: none;
 }
@@ -75,8 +66,10 @@ header {
 }
 
 .header_middle .search input::placeholder {
-    color: gray;
+    color: rgb(163, 163, 163);
     font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
 }
 
 .header_middle .myitem_info {
@@ -103,7 +96,7 @@ header {
     padding-right: 110px;
     > a, img {
         vertical-align:middle;
-        font-weight: 550;
+        font-weight: 600;
     }
 }
 
@@ -131,6 +124,7 @@ header {
     height: 200px;
     li a {
         font-size: 15px;
+        font-weight: 600;
     }
 }
 

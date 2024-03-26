@@ -17,7 +17,7 @@ nav .swiper-button-next, nav .swiper-button-prev {
     color: white;
     width: 60px;
     height: 60px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: rgb(172, 172, 172);
     opacity: 0;
     transition-property: all;
