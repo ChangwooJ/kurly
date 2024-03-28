@@ -1,4 +1,4 @@
-const qnas = [,
+const qnas = [
     {
         id: 1,
         title: "펌프 불량",
