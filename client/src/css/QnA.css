@@ -1,0 +1,52 @@
+.qna_head_wrap table {
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.qna_head_wrap th {
+    font-size: 15px;
+}
+
+.qna_head_wrap .title {
+    text-indent: 20px;
+    width: 55%;
+}
+
+.qna_head_wrap .writer {
+    color: black;
+}
+
+.writer {
+    width: 15%;
+    color: gray;
+}
+
+.qna_head_wrap .date {
+    color: black;
+}
+
+.date {
+    width: 15%;
+    color: gray;
+}
+
+.checked {
+    width: 15%;
+    color: rgb(111, 0, 128);
+}
+
+.qna_list table {
+    width: 100%;
+    td {text-align: center;}
+    .title {
+        margin-left: 10px;
+        text-align: left;
+    }
+}
+
+tr td {
+    padding: 20px 0;
+    border-top: 1px solid rgb(232, 232, 232);
+}
