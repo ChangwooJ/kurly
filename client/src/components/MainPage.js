@@ -11,7 +11,7 @@ const MainPage = () => {
         Axios.get('http://localhost:8000/api/item').then((response)=>{
             setItems(response.data);
         })
-    },[])
+    },[items])
 
     return(
         <React.Fragment>

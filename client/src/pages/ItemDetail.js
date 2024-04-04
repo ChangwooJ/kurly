@@ -1,28 +1,38 @@
-import React, { useState } from "react";
-import WeekItem from "../images/WeekItem";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Review from "./Review";
 import QnA from "./QnA";
+import Axios from "axios";
 
 import '../css/ItemDetail.css';
 
 const ItemDetail = () => {
-    const { item } = useParams(); //동적 라우트 매개변수는 라우트 설정과 훅에서의 이름이 서로 일치해야함.
-
+    const { item_id } = useParams(); //동적 라우트 매개변수는 라우트 설정과 훅에서의 이름이 서로 일치해야함.
     const [quantity, setQuantitiy] = useState(1);
+    const [items, setItems] = useState([]);
+
+    useEffect(()=>{ //왜 얘만 데이터가 안넘어오지 => redux에 대해 알아보아야할듯
+        Axios.get('http://localhost:8000/api/item').then((response)=>{
+            setItems(response.data);
+        })
+    },[items])
+    console.log(items);
+    const itemdetail = items[item_id];
+
+    console.log(itemdetail);
 
     return (
         <article>
             <div className="info_wrap">
                 <div className="info_img">
-                    <img src={WeekItem[item - 1].src} />
+                    <img src={itemdetail.src} />
                 </div>
                 <div className="info_text_wrap">
                     <div className="main_info">
-                        <p className="title">{WeekItem[item - 1].title}</p>
-                        <p className="disc">{WeekItem[item - 1].discount}%</p>
-                        <p className="disc_price">{WeekItem[item - 1].disc_price}원</p>
-                        <p className="price">{WeekItem[item - 1].price}원</p>
+                        <p className="title">{itemdetail.title}</p>
+                        <p className="disc">{itemdetail.discount}%</p>
+                        <p className="disc_price">{itemdetail.disc_price}원</p>
+                        <p className="price">{itemdetail.price}원</p>
                     </div>
                     <div className="sub_info"> {/*추후에 유동적인 데이터 표시가 가능하게 수정필요*/}
                         <dl>
@@ -44,15 +54,15 @@ const ItemDetail = () => {
                         <dl className="item_select">
                             <dt>상품선택</dt>
                             <dd>
-                                {WeekItem[item - 1].title}
+                                {itemdetail.title}
                                 <Quantity quantity={quantity} setQuantitiy={setQuantitiy}/>
-                                <p className="sel_discP">{WeekItem[item-1].disc_price}원</p>
-                                <p className="sel_price">{WeekItem[item-1].price}원</p>
+                                <p className="sel_discP">{itemdetail.disc_price}원</p>
+                                <p className="sel_price">{itemdetail.price}원</p>
                             </dd>
                         </dl>
                     </div>
                     <div className="price_info">
-                        총 상품금액: <h2>{WeekItem[item-1].disc_price}</h2><h3>원</h3>
+                        총 상품금액: <h2>{itemdetail.disc_price}</h2><h3>원</h3>
                     </div>
                     <div className="add_Bt">
                         <button >♡</button>
@@ -60,7 +70,7 @@ const ItemDetail = () => {
                     </div>
                 </div>
             </div>
-            <Review item={item}></Review>
+            <Review item_id={item_id}></Review>
             <QnaTitle></QnaTitle>
         </article>
     )

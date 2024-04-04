@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import WeekItem from "../images/WeekItem";
 import { img } from "../images/imgidx";
 import "../css/ItemSlide.css";
 import 'swiper/css';
@@ -21,25 +20,35 @@ const ItemSlide = (props) => {
                     }}
                 //끝에 오면 navigation off
                 >
-                    {item.map((slide) => (//리덕스 사용?
-                        <SwiperSlide>
-                            <a href={"/itemDetail/" + slide.id}>
-                                <div className="slide_item" key={slide.id}><img src={slide.src} width="110%" /></div>
-                                <button className="slide_additem"><img src={img.addCart} /> 담기</button>
-                                <div className="slide_item_info" key={slide.id}>
-                                    <p className="item_title">{slide.title}</p>
-                                    <p className="item_price">{slide.price}{"원"}</p>
-                                    <p className="item_discount">{slide.discount}{"%"}</p>
-                                    <p className="item_disc_price">{slide.disc_price}{"원"}</p>
-                                </div>
-                            </a>
-                        </SwiperSlide>
-                    ))}
+                {swiper(item)}
                 </Swiper>
                 <button className="swiper-next swiper_bt">{">"}</button>
             </div>
         </React.Fragment>
     )
+}
+
+function swiper(props) {
+    const swiperSlide = [];
+    for (let i = 0; i < props.length; i++) {
+        const slide = props[i];
+        swiperSlide.push(
+            <SwiperSlide>
+                <a href={"/itemDetail/" + slide.id}>
+                    <div className="slide_item" key={slide.id}><img src={slide.src} width="110%" /></div>
+                    <button className="slide_additem"><img src={img.addCart} /> 담기</button>
+                    <div className="slide_item_info" key={slide.id}>
+                        <p className="item_title">{slide.title}</p>
+                        <p className="item_price">{slide.price}{"원"}</p>
+                        <p className="item_discount">{slide.discount}{"%"}</p>
+                        <p className="item_disc_price">{slide.disc_price}{"원"}</p>
+                    </div>
+                </a>
+            </SwiperSlide>
+        );
+    }
+
+    return swiperSlide;
 }
 
 export default ItemSlide;
