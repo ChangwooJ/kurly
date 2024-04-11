@@ -14,10 +14,16 @@ const ItemDetail = () => {
     const dispatch = useDispatch();
     const items = useSelector(state => state.items.items);
     const itemdetail = items.find(item => item.id === parseInt(item_id));
-
+console.log(item_id);
+console.log(items);
+console.log(itemdetail);
     useEffect(() => {
         dispatch(fetchItems());
     }, []);
+
+    if (!itemdetail) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <article>
