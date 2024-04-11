@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchItems } from '../redux/actions/itemActions';
 import { useParams } from "react-router-dom";
 import Review from "./Review";
 import QnA from "./QnA";
-import Axios from "axios";
 
 import '../css/ItemDetail.css';
 
 const ItemDetail = () => {
     const { item_id } = useParams(); //동적 라우트 매개변수는 라우트 설정과 훅에서의 이름이 서로 일치해야함.
     const [quantity, setQuantitiy] = useState(1);
-    const [items, setItems] = useState([]);
 
-    useEffect(()=>{ //왜 얘만 데이터가 안넘어오지 => redux에 대해 알아보아야할듯
-        Axios.get('http://localhost:8000/api/item').then((response)=>{
-            setItems(response.data);
-        })
-    },[items])
-    console.log(items);
-    const itemdetail = items[item_id];
+    const dispatch = useDispatch();
+    const items = useSelector(state => state.items.items);
+    const itemdetail = items.find(item => item.id === parseInt(item_id));
 
-    console.log(itemdetail);
+    useEffect(() => {
+        dispatch(fetchItems());
+    }, []);
 
     return (
         <article>
@@ -94,7 +92,7 @@ function Quantity(props) {
     )
 }
 
-function QnaTitle(props) {
+function QnaTitle() {
     return(
         <div className="qna_wrap">
             <div className="qna_button">

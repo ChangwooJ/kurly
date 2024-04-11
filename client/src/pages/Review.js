@@ -5,7 +5,7 @@ import WeekItem from "../images/WeekItem";
 import "../css/Review.css";
 
 const Review = (props) => {
-    let item = props.item - 1;
+    let item = props.item_id;
 
     return (
         <div className="review_wrap">

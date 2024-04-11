@@ -2,23 +2,14 @@ import React, { useEffect, useState } from "react";
 import ItemSlide from "./ItemSlide";
 import "../css/MainPage.css"
 import { img } from "../images/imgidx";
-import Axios from 'axios';
 
 const MainPage = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(()=>{
-        Axios.get('http://localhost:8000/api/item').then((response)=>{
-            setItems(response.data);
-        })
-    },[items])
-
     return(
         <React.Fragment>
             <div className="main_page">
                 <h2>이주의 혜택<img src={img.week} height="35"/> {">"}</h2>
                 <h4 className="desc">지금 만날 수 있는 혜택 상품만 모아</h4>
-                <ItemSlide items={items}></ItemSlide>
+                <ItemSlide></ItemSlide>
             </div>
         </React.Fragment>
     )

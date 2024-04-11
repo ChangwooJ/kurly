@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchItems } from '../redux/actions/itemActions';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { img } from "../images/imgidx";
 import "../css/ItemSlide.css";
 import 'swiper/css';
 
-const ItemSlide = (props) => {
-    const item = props.items;
+const ItemSlide = () => {
+    const dispatch = useDispatch();
+    const slides = useSelector(state => state.items.items);
+
+    useEffect(()=>{
+        dispatch(fetchItems());
+    },[dispatch]);
 
     return (
         <React.Fragment>
@@ -20,7 +27,7 @@ const ItemSlide = (props) => {
                     }}
                 //끝에 오면 navigation off
                 >
-                {swiper(item)}
+                {swiper(slides)}
                 </Swiper>
                 <button className="swiper-next swiper_bt">{">"}</button>
             </div>
