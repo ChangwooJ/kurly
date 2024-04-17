@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from "../redux/actions/userAcions";
 import { useNavigate } from 'react-router-dom';
-import user from "../elements/User";
 import "../css/Login.css";
 
 const Login = () => {
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
     const navigate = useNavigate();
+    
+    const dispatch = useDispatch();
+    const userlist = useSelector(state => state.users.users);
+
+    useEffect(() => {
+        dispatch(fetchUsers());
+    }, []);
 
     const checkUser = (e) => {
         e.preventDefault();
-        const state = user.find(u => u.id === id && u.pw === pw);
+        const state = userlist.find(user => user.user_id === id && user.user_pw === pw);
         if(state){
             navigate(-1);
         }else{

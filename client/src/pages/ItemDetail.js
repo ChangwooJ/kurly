@@ -14,15 +14,13 @@ const ItemDetail = () => {
     const dispatch = useDispatch();
     const items = useSelector(state => state.items.items);
     const itemdetail = items.find(item => item.id === parseInt(item_id));
-console.log(item_id);
-console.log(items);
-console.log(itemdetail);
+
     useEffect(() => {
         dispatch(fetchItems());
     }, []);
 
-    if (!itemdetail) {
-        return <div>Loading...</div>;
+    if (!itemdetail) { //렌더링 제어.
+        return <div>Loading...</div>
     }
 
     return (
@@ -75,7 +73,7 @@ console.log(itemdetail);
                 </div>
             </div>
             <Review item_id={item_id}></Review>
-            <QnaTitle></QnaTitle>
+            <QnA item_id={item_id}></QnA>
         </article>
     )
 }
@@ -94,25 +92,6 @@ function Quantity(props) {
             <input type="button" value="–" onClick={()=>cal(-1)}/>
             {props.quantity}
             <input type="button" value="+" onClick={()=>cal(1)}/>
-        </div>
-    )
-}
-
-function QnaTitle() {
-    return(
-        <div className="qna_wrap">
-            <div className="qna_button">
-                <button>문의하기</button>
-            </div>
-            <div className="qna_title_wrap">
-                <h2 className="qna_title">상품 문의</h2>
-                <ul>
-                    <li>상품에 대한 문의를 남기는 공간입니다.
-                        해당 게시판의 성격과 다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
-                    <li>배송관련, 주문(취소,교환,환불)관련 문의 및 요청사항은 마이컬리 내 1:1문의에 남겨주세요.</li>
-                </ul>
-            </div>
-            <QnA></QnA>
         </div>
     )
 }

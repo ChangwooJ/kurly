@@ -1,24 +1,37 @@
-import React from "react";
-import { review } from "../images/imgidx";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReviews } from "../redux/actions/reviewActions";
 import WeekItem from "../images/WeekItem";
 
 import "../css/Review.css";
 
 const Review = (props) => {
-    let item = props.item_id;
+    let item_id = props.item_id;
+
+    const dispatch = useDispatch();
+    const reviewlist = useSelector(state => state.reviews.reviews);
+    const reviews = reviewlist.filter(review => review.item_id === parseInt(item_id));
+
+    useEffect(()=>{
+        dispatch(fetchReviews());
+    }, []);
+    
+    if (!reviews) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div className="review_wrap">
             <h2 className="review">상품 후기</h2>
             <div className="review_photo">
-                {review.map((idx)=>(
+                {reviews.map((idx)=>(
                     <button onClick="loction.href='/review/detail/:id'" key={idx.id}>
                         <img src={idx.src} />
                     </button>
                 ))}
             </div>
             <div className="review_top">
-                <div className="review_count">총 {review.length}개</div>
+                <div className="review_count">총 {reviews.length}개</div>
                 <div className="review_sort">
                     <button className="recommended">추천순</button>
                     <div className="separator"></div>
@@ -26,8 +39,8 @@ const Review = (props) => {
                 </div>
             </div>
             <div className="review_main">
-                {review.map((idx) => (
-                    <Review_Main idx={idx} item={item}></Review_Main>
+                {reviews.map((idx) => (
+                    <Review_Main idx={idx} item={item_id}></Review_Main>
                 ))}
             </div>
         </div>
@@ -35,7 +48,7 @@ const Review = (props) => {
 }
 
 function Review_Main(props) {
-    let strname = props.idx.name;
+    let strname = props.idx.nickname;
     let arrname = [...strname];
     let item = props.item;
     
