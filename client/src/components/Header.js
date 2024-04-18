@@ -8,7 +8,7 @@ const Header = () => {
             <div className="header_top">
                 <div className="user">
                     <div className="user_join">
-                        <a href="/join">회원가입</a>
+                        <a href="/signup">회원가입</a>
                     </div>
                     <div className="user_login">
                         <a href="/login">로그인</a>

@@ -1,0 +1,133 @@
+.star {
+    color: orangered;
+}
+
+.signup_wrap {
+    padding: 80px 30% 0 30%;
+    width: 40%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.form_top {
+    font-size: 12px;
+    text-align: right;
+    padding: 10px;
+    color: rgb(96, 96, 96);
+    border-bottom: 2px solid black;
+}
+
+.signup_info {
+    border-bottom: 1px solid black;
+}
+
+.signup_info div {
+    display: flex;
+}
+
+.title {
+    width: 22%;
+    height: 50px;
+    margin: 2% 1%;
+    align-items: center;
+}
+
+.info {
+    width: 50%;
+    height: 50px;
+    margin: 2% 1%;
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border-width: 1px;
+        border-color: rgb(180, 180, 180);
+    }
+    input::placeholder{
+        padding: 0 15px;
+        font-size: 15px;
+    }
+}
+
+.check_button {
+    width: 21%;
+    height: 50px;
+    margin: 2% 1%;
+}
+
+.bt_style {
+    width: 100%;
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: rgb(111, 0, 128);
+    border-width: 1px;
+    color: rgb(111, 0, 128);
+    font-weight: 600;
+}
+
+.address .bt_style{
+    border-color: rgb(111, 0, 128);
+}
+
+.address_plus {
+    div {
+        height: 20px;
+        margin-top: 0;
+    }
+    .info {
+        font-weight: 500;
+        font-size: 12px;
+    }
+}
+
+.gender {
+    width: 50%;
+    height: 50px;
+    margin: 2% 1%;
+    align-items: center;
+    div {
+        width: 33%;
+    }
+}
+
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(1px, 0.1em) solid rgb(194, 194, 194);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+[type="radio"]:checked {
+    border-color: rgb(111, 0, 128);
+    border-width: 5px;
+}
+
+.birth_date {
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    align-items: center;
+    div{
+        font-size: 17px;
+        font-weight: 500;
+        color: rgb(180, 180, 180);
+    }
+    input {
+        border: none;
+        text-align: center;
+        height: 20px;
+    }
+    input::placeholder {
+        font-size: 14px;
+        text-align: center;
+    }
+    input:focus{
+        outline: none;
+    }
+}
