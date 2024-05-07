@@ -1,11 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from '../redux/actions/userAcions';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import "../css/SignUp.css";
 
 const SignUp = () => {
-    const [yyyy, setYyyy] = useState();
-    const [mm, setMm] = useState();
-    const [dd, setDd] = useState();
+    const navigate = useNavigate();
+    const [userData, setUserData] = useState({
+        user_id: '',
+        user_pw: '',
+        nickname: '',
+        email: ''
+    });
+
+    const dispatch = useDispatch();
+    const userlist = useSelector(state => state.users.users);
+
+    useEffect(() => {
+        dispatch(fetchUsers());
+    }, []);
+
+    const change = (e) => {
+        setUserData({...userData, [e.target.name]: e.target.value });
+    }
+
+    const check_ID = () => {
+        const state = userlist.find(user => user.user_id === userData.user_id)
+        if(state){
+            alert('중복된 아이디입니다.');
+            setUserData({...userData, user_id: ''});
+        } else{
+            alert('중복되지 않은 아이디입니다.')
+        }
+    }
+
+    const submit = async (e) => {
+        const config = {"Content-Type": 'application/json'};
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8000/api/signup', userData, config);
+            console.log(response.data);
+            alert('등록완료');
+            navigate("/login");
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     return (
         <signup>
@@ -16,21 +58,23 @@ const SignUp = () => {
                     필수입력사항
                 </div>
                 <div className="signup_form">
-                    <form>
+                    <form onSubmit={submit}>
                         <div className="signup_info">
                             <div className="signup_id">
                                 <div className="title">아이디<span className="star">*</span></div>
                                 <div className="id info">
-                                    <input type="text" placeholder="아이디를 입력해주세요" />
+                                    <input name="user_id" type="text" placeholder="아이디를 입력해주세요" 
+                                    value={userData.user_id} onChange={change} />
                                 </div>
                                 <div className="check_button">
-                                    <input className="bt_style" type="button" value="중복확인" />
+                                    <input className="bt_style" type="button" value="중복확인" onClick={() => check_ID()} />
                                 </div>
                             </div>
                             <div className="signup_pw">
                                 <div className="title">비밀번호<span className="star">*</span></div>
                                 <div className="pw info">
-                                    <input type="text" placeholder="비밀번호를 입력해주세요" />
+                                    <input name="user_pw" type="text" placeholder="비밀번호를 입력해주세요" 
+                                    onChange={change} />
                                 </div>
                             </div>
                             <div className="signup_pw_check">
@@ -42,13 +86,15 @@ const SignUp = () => {
                             <div className="signup_name">
                                 <div className="title">이름<span className="star">*</span></div>
                                 <div className="name info">
-                                    <input type="text" placeholder="이름을 입력해주세요" />
+                                    <input name="nickname" type="text" placeholder="이름을 입력해주세요" 
+                                    onChange={change} />
                                 </div>
                             </div>
                             <div className="signup_email">
                                 <div className="title">이메일<span className="star">*</span></div>
                                 <div className="email info">
-                                    <input type="text" placeholder="예: marketkurly@kurly.com" />
+                                    <input name="email" type="email" placeholder="예: marketkurly@kurly.com" 
+                                    onChange={change} />
                                 </div>
                                 <div className="check_button">
                                     <input className="bt_style" type="button" value="중복확인" />

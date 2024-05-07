@@ -1,27 +1,26 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const session = require('express-session')
-const FileStore = require('session-file-store')(session)
 const PORT = process.env.PORT || 8000;
 const router = require('./router/routes');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:3000', // 클라이언트 도메인
+    credentials: true, // 인증 정보 포함 허용
+  };
+
+app.use(cors(corsOptions));
 app.use(express.json());
-
 app.use(session({
     secret: 'kurly-jung',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     store: new FileStore(),
     cookie: {
-        domain: 'localhost',
-        path: '/',
-        maxAge: 24 * 6 * 60 * 10000,
-        sameSite: 'none',
-        httpOnly: true,
-        secure: true,
-      },
+        maxAge: 1000*60*10,
+    },
 }));
 
 app.use('/api', router);
