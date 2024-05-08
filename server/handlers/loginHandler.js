@@ -1,6 +1,6 @@
 const db = require('./DBinfo');
 
-const getLoginList = (req, res) => {
+const postLoginList = (req, res) => {
     const { user_id, user_pw } = req.body;
 
     const query = "SELECT * FROM kurly.user WHERE user_id = ? AND user_pw =?";
@@ -19,8 +19,6 @@ const getLoginList = (req, res) => {
             });
         }
     });
-
-
 };
 
-module.exports = getLoginList;
+module.exports = postLoginList;

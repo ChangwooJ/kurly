@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import "../css/Login.css";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../redux/actions/LoginActions";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({
@@ -10,6 +12,7 @@ const Login = () => {
     });
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const change = (e) => {
         setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -21,6 +24,7 @@ const Login = () => {
             withCredentials: true
         })
         .then((response) => {
+            dispatch(login());
             const redirectPath = response.data.redirectPath;
             navigate(redirectPath);
         })

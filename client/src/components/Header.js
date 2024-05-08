@@ -1,18 +1,20 @@
 import React from "react";
 import { img } from "../images/imgidx";
 import "../css/header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    const isLoggedIn = useSelector(state => state.logins.isLoggedIn);
+    let loginBar = null;
+
+    if(isLoggedIn === true) loginBar = <Logged></Logged>
+    else loginBar = <None></None>
+
     return(
         <header id="header">
             <div className="header_top">
                 <div className="user">
-                    <div className="user_join">
-                        <a href="/signup">회원가입</a>
-                    </div>
-                    <div className="user_login">
-                        <a href="/login">로그인</a>
-                    </div>
+                    {loginBar}
                     <div className="costomer_service">
                         <a href="/user/service">고객센터</a>
                     </div>
@@ -60,5 +62,31 @@ const Header = () => {
         </header>
     );
 };
+
+function Logged() {
+    return(
+        <>
+            <div className="user_join">
+                <a href="/signup">logged</a>
+            </div>
+            <div className="user_login">
+                <a href="/login">로그인</a>
+            </div>
+        </>
+    )
+}
+
+function None() {
+    return(
+        <>
+            <div className="user_join">
+                <a href="/signup">회원가입</a>
+            </div>
+            <div className="user_login">
+                <a href="/login">로그인</a>
+            </div>
+        </>
+    )
+}
 
 export default Header;
