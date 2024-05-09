@@ -22,4 +22,3 @@ const App = () => {
 }
 
 export default App;
-//component와 element의 차이: return.

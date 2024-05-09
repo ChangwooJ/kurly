@@ -25,7 +25,6 @@ const ItemSlide = () => {
                         prevEl: ".swiper-prev",
                         nextEl: ".swiper-next"
                     }}
-                //끝에 오면 navigation off
                 >
                 {swiper(slides)}
                 </Swiper>
@@ -59,5 +58,4 @@ function swiper(props) {
 }
 
 export default ItemSlide;
-//swiper 선택자가 따로 있음
 //품목 할인가 자동 구성 필요(소숫점 2번째), 가격의 ','을 제외하고 숫자로 인식 필요

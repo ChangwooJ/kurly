@@ -19,7 +19,7 @@ const Banner = () => {
                 <Swiper
                     spaceBetween={200}
                     slidesPerView={1}
-                    navigation  //navigation 커스텀 필요(좌우 간격)
+                    navigation
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
                     loop={true}
@@ -34,6 +34,3 @@ const Banner = () => {
 }
 
 export default Banner;
-//css: opacity, flex.
-//react: js파일 로드안됨.
-//z-index.

@@ -15,7 +15,7 @@ const postLoginList = (req, res) => {
             req.session.ss_nickname = result[0].nickname;
 
             req.session.save(function () {
-                res.json({ redirectPath: '/' });
+                res.json({ redirectPath: '/', ss_nickname: result[0].nickname });
             });
         }
     });

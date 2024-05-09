@@ -98,4 +98,3 @@ function Quantity(props) {
 
 export default ItemDetail;
 //개수 조절할때 총 가격 변동 구현 필요
-//품목마다 리뷰와 상담내용 구분 필요

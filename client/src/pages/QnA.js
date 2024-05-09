@@ -91,4 +91,3 @@ function Qna_List(props) {
 
 export default QnA;
 //문의 순서(최근 날짜가 상단에 오게 정렬)
-//시간이 T00:00:00.000Z이런 형식으로 나오게 되는 문제.
