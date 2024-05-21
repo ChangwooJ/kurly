@@ -7,8 +7,6 @@ import "../css/header.css";
 const Header = () => {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn") === 'true';
     const nickname = sessionStorage.getItem("ss_nickname");
-    console.log(isLoggedIn);
-    console.log(nickname);
     let loginBar = null;
 
     if (isLoggedIn) loginBar = <Logged nickname={nickname}></Logged>;

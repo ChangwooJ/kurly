@@ -7,10 +7,8 @@ const postLoginList = (req, res) => {
     const params = [user_id, user_pw];
     
     db.query(query, params, (err, result) => {
-        console.log(result.nickname);
         if (err) throw err;
         if (result.length > 0) {
-            console.log(result);
             req.session.is_logined = true;
             req.session.ss_nickname = result[0].nickname;
 
