@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 8000;
 const router = require('./router/routes');
@@ -13,6 +14,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(session({
     secret: 'kurly-jung',
     resave: false,
