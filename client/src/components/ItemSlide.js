@@ -58,4 +58,3 @@ function swiper(props) {
 }
 
 export default ItemSlide;
-//품목 할인가 자동 구성 필요(소숫점 2번째), 가격의 ','을 제외하고 숫자로 인식 필요

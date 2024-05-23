@@ -78,7 +78,7 @@ function Qna_List(props) {
         checked = "답변대기";
     }
     console.log(list.date);
-    //boolean 값이 0 or 1로 나오는데 SELECT IF 문으로 해결은 가능하나 동시에 쓰는 법을 모름.
+    
     return (
         <tr key={list.id}>
             <td className="title">{list.title}</td>

@@ -32,13 +32,13 @@ const Header = () => {
                 </div>
                 <div className="myitem_info">
                     <div className="delivery_address">
-                        <a href="/mypage/mysetting/address"><img src={img.location} /></a>
+                        <a href="/address"><img src={img.location} /></a>
                     </div>
                     <div className="dibs">
-                        <a href="/mypage/myitem/dips"><img src={img.dips} /></a>
+                        <a href="/dips"><img src={img.dips} /></a>
                     </div>
                     <div className="shopping_cart">
-                        <a href="/mypage/myitem/cart"><img src={img.cart} /></a>
+                        <a href="/cart"><img src={img.cart} /></a>
                     </div>
                 </div>
             </div>

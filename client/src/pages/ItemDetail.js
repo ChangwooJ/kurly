@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../redux/actions/itemActions';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Review from "./Review";
 import QnA from "./QnA";
 
 import '../css/ItemDetail.css';
+import axios from "axios";
 
 const ItemDetail = () => {
+    const navigate = useNavigate();
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn") === 'true';
+    const nickname = sessionStorage.getItem("ss_nickname");
     const { item_id } = useParams(); //동적 라우트 매개변수는 라우트 설정과 훅에서의 이름이 서로 일치해야함.
     const [quantity, setQuantitiy] = useState(1);
+    const [totalPrice, setTotalPrice] = useState("0");
 
     const dispatch = useDispatch();
     const items = useSelector(state => state.items.items);
@@ -21,6 +26,22 @@ const ItemDetail = () => {
 
     if (!itemdetail) { //렌더링 제어.
         return <div>Loading...</div>
+    }
+
+    const addCart = async () => {
+        if(isLoggedIn === true){
+            try {
+                const response = await axios.post('http://localhost:8000/api/addcart', { nickname: nickname, item_id: itemdetail.id, num: quantity });
+                console.log(response.data);
+                alert('장바구니 담기 완료');
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        else {
+            alert('로그인을 먼저 해주세요.');
+            navigate("/login");
+        }
     }
 
     return (
@@ -57,18 +78,18 @@ const ItemDetail = () => {
                             <dt>상품선택</dt>
                             <dd>
                                 {itemdetail.title}
-                                <Quantity quantity={quantity} setQuantitiy={setQuantitiy}/>
+                                <Quantity quantity={quantity} setQuantitiy={setQuantitiy} />
                                 <p className="sel_discP">{itemdetail.disc_price}원</p>
                                 <p className="sel_price">{itemdetail.price}원</p>
                             </dd>
                         </dl>
                     </div>
                     <div className="price_info">
-                        총 상품금액: <h2>{itemdetail.disc_price}</h2><h3>원</h3>
+                        총 상품금액: <h2>{totalPrice}</h2><h3>원</h3>
                     </div>
                     <div className="add_Bt">
                         <button >♡</button>
-                        <button className="add_cart">장바구니 담기</button>
+                        <button className="add_cart" onClick={addCart}>장바구니 담기</button>
                     </div>
                 </div>
             </div>
@@ -76,25 +97,36 @@ const ItemDetail = () => {
             <QnA item_id={item_id}></QnA>
         </article>
     )
-}
 
-function Quantity(props) {
-    const cal = (num) => {
-        if(num < 0){
-            if(props.quantity > 1){
-                props.setQuantitiy((prev) => prev + num);
-            }
-        } else props.setQuantitiy((prev) => prev + num);
+    function Quantity(props) {
+        const cal = (num) => {
+            if (num < 0) {
+                if (props.quantity > 1) {
+                    props.setQuantitiy((prev) => prev + num);
+                }
+            } else props.setQuantitiy((prev) => prev + num);
+        }
+
+        TotalPrice();
+
+        return (
+            <div className="quan_bt">
+                <input type="button" value="–" onClick={() => cal(-1)} />
+                {props.quantity}
+                <input type="button" value="+" onClick={() => cal(1)} />
+            </div>
+        )
     }
 
-    return (
-        <div className="quan_bt">
-            <input type="button" value="–" onClick={()=>cal(-1)}/>
-            {props.quantity}
-            <input type="button" value="+" onClick={()=>cal(1)}/>
-        </div>
-    )
+    function TotalPrice(){
+        let disc_price = itemdetail.disc_price;
+        let tempPrice = disc_price.replace(/[,]/gim, '');
+        let totalPrice = tempPrice * quantity;
+
+        totalPrice = totalPrice.toLocaleString('en-US');
+        setTotalPrice(totalPrice);
+    }
+
 }
 
 export default ItemDetail;
-//개수 조절할때 총 가격 변동 구현 필요
