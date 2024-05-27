@@ -1,7 +1,7 @@
 # 마켓 컬리 클론 코딩 프로젝트
 
 
-<img src="https://github.com/ChangwooJ/kurly/assets/127019318/19925b79-d5d1-4805-9ee9-40fe054b0301">
+<img src="https://github.com/ChangwooJ/kurly/assets/127019318/a15ec051-eca0-4afd-9262-266cbeacafbe">
 
 
  - 프로젝트 : 마켓컬리 클론코딩
